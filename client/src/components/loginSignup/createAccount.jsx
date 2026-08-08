@@ -15,28 +15,20 @@ export const CreateAccount = () => {
         console.log(`userName = ${userNameRef.current.value}\nemail = ${emailRef.current.value}\npassWordRef = ${passWordRef.current.value}`)
     }
 
-    return <OuterBox title={"Create Account"}>
+    return <OuterBox title={"Create Account"} linkText={"Already Have Account?"} onSubmit={onSubmit} route={"signin"} submitButtonText={"Create"}>
 
-        <form className={css.form} onSubmit={onSubmit}>
+        <div>
+            <UserSvg c={"#2c2c2c"} />
+            <input type="text" ref={userNameRef} placeholder="Username" name="username" autoComplete="username" required />
+        </div>
+        <div>
+            <EmailSvg c={"#2C2C2C"} />
+            <input ref={emailRef} placeholder="E-mail" required name="email" autoComplete="email" />
+        </div>
+        <div>
+            <PassWordSvg c={"#2c2c2c"} />
+            <input ref={passWordRef} placeholder="PassWord" required minLength="8" name="password" autoComplete="current-password" />
+        </div>
 
-            <div>
-                <UserSvg c={"#2c2c2c"} />
-                <input type="text" ref={userNameRef} placeholder="Username" name="username" autoComplete="username" required />
-            </div>
-            <div>
-                <EmailSvg c={"#2C2C2C"} />
-                <input ref={emailRef} placeholder="E-mail" required name="email" autoComplete="email" />
-            </div>
-            <div>
-                <PassWordSvg c={"#2c2c2c"} />
-                <input ref={passWordRef} placeholder="PassWord" required minLength="8" name="password" autoComplete="current-password" />
-            </div>
-
-            <div className={css.clickAbleGroup}>
-                <button className={css.submit} type="submit"  >Create</button>
-
-                <a href="signin" className={css.link}>Already Have Account?</a>
-            </div>
-        </form>
     </OuterBox>
 }

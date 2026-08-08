@@ -13,9 +13,8 @@ export const SignIn = () => {
         event.preventDefault()
         console.log(`userName = ${userNameRef.current.value}\npassWordRef = ${passWordRef.current.value}`)
     }
-    return <OuterBox title={"Sign In"}>
-        <form className={css.form} onSubmit={onSubmit}>
-
+    return <OuterBox title={"Sign In"} linkText={"Don't Have Account?"} onSubmit={onSubmit} submitButtonText={"Signin"} route={"createacc"} >
+       
             <div>
                 <UserSvg c={"#2c2c2c"} />
                 <input type="text" ref={userNameRef} placeholder="Username" name="username" autoComplete="username" required />
@@ -25,12 +24,5 @@ export const SignIn = () => {
                 <input type="password" ref={passWordRef} placeholder="PassWord" name="password" autoComplete="current-password" required minLength="8" />
             </div>
 
-            <div className={css.clickAbleGroup}>
-                <button className={css.submit} type="submit"  >Signin</button>
-
-                <a href="createacc" className={css.link}>Don't Have Account?</a>
-            </div>
-
-        </form>
     </OuterBox>
 }
