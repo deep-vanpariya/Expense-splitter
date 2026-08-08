@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+.title {
+  @apply font-extrabold text-3xl pb-3 text-[#ff9354] border-b-3 border-[#FFDDB0]
+          sm:text-4xl
+          
+         pl-1
+         
+}

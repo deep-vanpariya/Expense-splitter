@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+.mainContainer {
+    @apply h-full flex justify-center items-center
+}
+
+.subContainer {
+
+    @apply flex justify-center items-center flex-col py-10 w-full mx-[5%] lg:mx-[15%] bg-white rounded-4xl h-fit
+}
+
+.title {
+    @apply text-2xl text-[#2C2C2C] font-bold mt-3 mb-6 sm:text-3xl
+}
+
+.form {
+    @apply
+    /* bg-amber-200 */
+    p-3 w-full flex flex-col items-center space-y-3
+}
+
+.form>div>input {
+    @apply border-2 min-w-1/2 sm:w-4/6 px-1 sm:p-1 border-[#FFDDB0] focus:outline-[#FFBE91]
+}
+
+.form>div>label {
+    /* @apply text-[#3A3A3A] flex items-center text-[1rem] sm:text-[1.1rem] */
+}
+
+.form>div>svg {
+    @apply size-5 sm:size-7
+}
+
+.form>div {
+    @apply flex justify-center items-center gap-2 w-full sm:gap-5
+
+
+}
+
+.submit {
+    @apply bg-[#FFBE91] p-1  w-1/6 min-w-20 rounded-xl
+
+    hover:cursor-pointer
+}
+.link{
+    @apply text-[#555555] underline underline-offset-2 
+}
+
+.clickAbleGroup{
+    @apply mt-3 flex flex-col
+    sm:flex-row
+}

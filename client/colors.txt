@@ -1,0 +1,62 @@
+┌────────────────────────────────────────────────────────────────────┐
+│ Page Background                → #FFFCE1                           │
+├────────────────────────────────────────────────────────────────────┤
+│ Navbar                          → #FFFFFF                          │
+│ Navbar Border                   → #FFDDB0                          │
+│ Logo                            → #2C2C2C                          │
+│ Navigation Links                → #555555                          │
+│ Active Link                     → #FFBE91                          │
+├────────────────────────────────────────────────────────────────────┤
+│ Hero Background                 → #FFFCE1                          │
+│ Main Heading (H1)               → #2C2C2C                          │
+│ Sub Heading                     → #3A3A3A                          │
+│ Paragraph                       → #666666                          │
+│ Primary Button                  → #FFBE91                          │
+│ Secondary Button                → #CFEBFF                          │
+├────────────────────────────────────────────────────────────────────┤
+│ Feature Section Background      → #CFEBFF                          │
+│ Feature Cards                   → #FFFFFF                          │
+│ Feature Icons                   → #FFBE91                          │
+│ Card Heading                    → #2C2C2C                          │
+│ Card Paragraph                  → #666666                          │
+├────────────────────────────────────────────────────────────────────┤
+│ About Section Background        → #FFFFFF                          │
+│ Heading                         → #2C2C2C                          │
+│ Paragraph                       → #666666                          │
+├────────────────────────────────────────────────────────────────────┤
+│ Services Background             → #FFFCE1                          │
+│ Service Cards                   → #FFFFFF                          │
+│ Service Card Hover              → #CFEBFF                          │
+├────────────────────────────────────────────────────────────────────┤
+│ Portfolio Background            → #FFFFFF                          │
+│ Portfolio Cards                 → #FFFFFF                          │
+│ Overlay / Highlight             → #FFBE91                          │
+├────────────────────────────────────────────────────────────────────┤
+│ Testimonials Background         → #CFEBFF                          │
+│ Testimonial Cards               → #FFFFFF                          │
+│ Stars / Rating                  → #FFBE91                          │
+├────────────────────────────────────────────────────────────────────┤
+│ Contact Background              → #FFFFFF                          │
+│ Input Background                → #FFFFFF                          │
+│ Input Border                    → #FFDDB0                          │
+│ Input Focus                     → #FFBE91                          │
+├────────────────────────────────────────────────────────────────────┤
+│ CTA Section Background          → #FFBE91                          │
+│ CTA Heading                     → #2C2C2C                          │
+│ CTA Paragraph                   → #5A5A5A                          │
+│ CTA Button                      → #FFFFFF                          │
+├────────────────────────────────────────────────────────────────────┤
+│ Footer Background               → #FFDDB0                          │
+│ Footer Heading                  → #2C2C2C                          │
+│ Footer Links                    → #555555                          │
+│ Footer Text                     → #777777                          │
+│ Social Icons                    → #2C2C2C                          │
+├────────────────────────────────────────────────────────────────────┤
+│ Primary Accent                  → #FFBE91                          │
+│ Secondary Accent                → #CFEBFF                          │
+│ Borders & Dividers              → #FFDDB0                          │
+│ White Cards                     → #FFFFFF                          │
+│ Main Text                       → #2C2C2C                          │
+│ Secondary Text                  → #666666                          │
+│ Disabled Text                   → #999999                          │
+└────────────────────────────────────────────────────────────────────┘
