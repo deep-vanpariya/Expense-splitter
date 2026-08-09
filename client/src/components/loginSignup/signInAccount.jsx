@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react"
 import css from "./SignInCreateAcc.module.css"
 import { UserSvg, EmailSvg } from "../../assets/svgFile"
+import { User, LockIcon } from "lucide-react"
 import { OuterBox } from "./outerBox"
 
 export const SignIn = () => {
@@ -14,15 +15,18 @@ export const SignIn = () => {
         console.log(`userName = ${userNameRef.current.value}\npassWordRef = ${passWordRef.current.value}`)
     }
     return <OuterBox title={"Sign In"} linkText={"Don't Have Account?"} onSubmit={onSubmit} submitButtonText={"Signin"} route={"createacc"} >
-       
-            <div>
-                <UserSvg c={"#2c2c2c"} />
-                <input type="text" ref={userNameRef} placeholder="Username" name="username" autoComplete="username" required />
-            </div>
-            <div>
-                <EmailSvg c={"#2C2C2C"} />
-                <input type="password" ref={passWordRef} placeholder="PassWord" name="password" autoComplete="current-password" required minLength="8" />
-            </div>
+
+        <div>
+            {/* <UserSvg c={"#2c2c2c"} /> */}
+
+            <User color="#2c2c2c" strokeWidth={1.5} />
+            <input type="text" ref={userNameRef} placeholder="Username" name="username" autoComplete="username" required />
+        </div>
+        <div>
+            {/* <EmailSvg c={"#2C2C2C"} /> */}
+            <LockIcon color="#2c2c2c" strokeWidth={1.5} />
+            <input type="password" ref={passWordRef} placeholder="PassWord" name="password" autoComplete="current-password" required minLength="8" />
+        </div>
 
     </OuterBox>
 }

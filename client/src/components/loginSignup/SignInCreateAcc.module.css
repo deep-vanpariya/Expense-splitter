@@ -28,7 +28,8 @@
 }
 
 .form>div>svg {
-    @apply size-5 sm:size-7
+    @apply size-6 sm:size-7
+
 }
 
 .form>div {
