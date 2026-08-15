@@ -22,7 +22,6 @@ const createUser = async ({ username, email, encryptPass }) => {
 const getSingleUser = async ({ username }) => {
     const findQuery = "SELECT * FROM users WHERE username = $1 ;"
 
-
     try {
 
         const { rows } = await client.query(findQuery, [username]);
@@ -39,8 +38,6 @@ const getSingleUser = async ({ username }) => {
             error: err.message
         }
     }
-
-
 
 }
 export {
