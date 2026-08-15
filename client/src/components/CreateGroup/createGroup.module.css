@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+.create_group {
+  @apply flex w-full flex-col items-center gap-5;
+}
+
+.create_group_avatar {
+  @apply h-fit w-fit rounded-full border-[3px] border-dashed border-black p-1;
+}
+
+.create_group_avatar_inner {
+  @apply h-fit w-fit rounded-full border-[3px] border-black p-2;
+}
+
+.create_group_form {
+  @apply flex items-center w-48 flex-col gap-1;
+}
+
+.create_group_input {
+  @apply rounded-3xl border border-[#ccc] bg-gray-800 px-2 py-1.5 text-center text-white outline-none;
+}
+
+.create_group_input:focus {
+  @apply border-black placeholder:opacity-0;
+}
+
+.create_group_button {
+  @apply cursor-pointer w-full rounded-3xl border border-[#ccc] bg-gray-800 px-2 py-1.5 text-white transition-colors duration-150;
+}
+
+.create_group_button:hover {
+  @apply bg-gray-900;
+}
+
+.create_group_form_created {
+  @apply text-green-500
+}
+
+.create_group_form_notCreated {
+  @apply text-red-500
+}
+
+.create_group_button:active {
+  @apply bg-black;
+}

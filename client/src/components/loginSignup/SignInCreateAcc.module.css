@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .mainContainer {
-    @apply h-full flex justify-center items-center
+    @apply flex justify-center items-center w-full 
 }
 
 .subContainer {
