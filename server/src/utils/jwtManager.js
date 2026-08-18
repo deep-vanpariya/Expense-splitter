@@ -5,10 +5,10 @@ const secret = process.env.JWT_SECRET;
 const expiry = process.env.JWT_EXPIRY;
 if (!secret) { throw new Error("JWT_SECRET NOT FOUND!"); }
 
-const generateJWT = ({ username }) => {
-    if (!username) return { success: false, error: "username not found" }
+const generateJWT = ({ userid }) => {
+    if (!userid) return { success: false, error: "username not found" }
 
-    const token = jwt.sign({ username }, secret, { expiresIn: expiry })
+    const token = jwt.sign({ userid }, secret, { expiresIn: expiry })
     return {
         success: true,
         token

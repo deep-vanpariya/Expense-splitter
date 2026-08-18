@@ -39,7 +39,7 @@ userRouter.post("/signin", async (req, res) => {
     const checkResult = await checkPassword({ bodyPassword: password, dbPassword: result.data.password })
     if (checkResult.success == false) return res.status(401).json({ msg: "Password Not Valid", error: checkResult.error });
 
-    const generateResult = generateJWT({ username })
+    const generateResult = generateJWT({ userid: result.data.id })
     if (!generateResult.success) return res.status(500).json({ msg: "Error On JWT creation!!", error: generateResult.error });
 
     return res.json({
