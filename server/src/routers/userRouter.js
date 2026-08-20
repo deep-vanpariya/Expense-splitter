@@ -9,7 +9,7 @@ const userRouter = Router();
 userRouter.post("/signup", async (req, res) => {
 
     const { username, email, password } = req.body;
-    if (!username || !email || !password) return res.status(400).send("Invalid body elements");
+    if (!username || !email || !password) return res.status(422).send("Invalid body!!!!");
 
     const verified = signUpSchema({ username, email, password });
     if (verified == false) return res.status(422).send("Invalid format!!!!");
@@ -21,13 +21,15 @@ userRouter.post("/signup", async (req, res) => {
     const result = await createUser({ email, username, encryptPass: encryption.hash })
     if (result.success == false) return res.status(500).json({ msg: "DB ERROR!!", Error: result.error })
 
-    return res.json(result)
+    return res.json({
+        success: result.success,
+        rowcount: result.data.rowCount
+    })
 })
 
 userRouter.post("/signin", async (req, res) => {
 
     const { username, password } = req.body;
-
     if (!username || !password) return res.status(422).json({ msg: "Invalid body!!!!" });
 
     const verified = signInSchema({ username, password })

@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { createGroup, deleteSingleGroup, getAllGroupsUserIn, getUserCreatedGroupes } from "../database/user_groupsQuery.js";
+import { createGroup, deleteSingleGroup, getAllGroupsUserIn, getUserCreatedGroupes, leaveFromGroup } from "../database/user_groupsQuery.js";
 import { checkToken } from "../middleware/tokenChecker.js";
 
 const groupRouter = Router()
@@ -31,7 +31,7 @@ groupRouter.get("/created", async (req, res) => {
 
 groupRouter.get("/in", async (req, res) => {
     const { userid } = req._data;
-    if (!userid) return res.status(422).json({ msg: "Invalid body!!!!" });
+    if (!userid) return res.status(422).json({ msg: "Invalid body!!!!", error: "Invalid body!!!!" });
 
     const result = await getAllGroupsUserIn({ userid });
     if (result.success == false) return res.status(500).json({ msg: "DB ERROR!!", error: result.error });
@@ -42,6 +42,19 @@ groupRouter.get("/in", async (req, res) => {
     })
 })
 
+groupRouter.delete("/leave", async (req, res) => {
+    const { userid } = req._data;
+    const { groupid } = req.body;
+
+    if (!userid || !groupid) return res.status(422).json({ msg: "Invalid body!!!!", error: "Invalid body!!!!" });
+
+    const result = await leaveFromGroup({ groupid, userid })
+    if (result.success == false) return res.status(500).json({ msg: "DB ERROR!!", error: result.error });
+
+    return res.json({
+        result: result.data
+    })
+})
 
 groupRouter.delete("/", async (req, res) => {
     const { userid } = req._data

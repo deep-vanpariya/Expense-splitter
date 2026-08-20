@@ -56,18 +56,17 @@ const deleteSingleGroup = async ({ userid, groupid }) => {
 }
 const leaveFromGroup = async ({ userid, groupid }) => {
     const query = `WITH delete_member AS(DELETE FROM expense_group_members WHERE memberid = $1 AND groupid = $2 RETURNING groupid,memberid),
-    update_group AS(UPDATE expense_group SET member_count = member_count - 1 WHERE id IN (SELECT groupid from delete_member) RETURNING id, member_count)
-    delete_group AS (DELETE FROM expense_group WHERE id IN (SELECT id FROM update_group WHERE member_count <=0) RETURNING id);
-    SELECT (SELECT memberid FROM delete_member AS member_removed_from_group,
-            SELECT member_count FROM update_group AS member_count_in_group,
-            SELECT id FROM delete_group AS deleted_user_id) 
-    `
+    update_group AS(UPDATE expense_group SET member_count = member_count - 1 WHERE id IN (SELECT groupid from delete_member) AND member_count > 1 RETURNING id, member_count),
+    delete_group AS (DELETE FROM expense_group WHERE id IN (SELECT groupid FROM delete_member ) AND member_count <= 1 RETURNING id)
+    SELECT (SELECT memberid FROM delete_member) AS member_removed_from_group,
+            (SELECT member_count FROM update_group) AS member_count_in_group,
+            (SELECT id FROM delete_group) AS deleted_group; `
     try {
 
-        const result = await client.query(query)
+        const result = await client.query(query, [userid, groupid])
         return {
             success: true,
-            result
+            data: result.rows[0]
         }
     }
     catch (err) {
@@ -104,5 +103,6 @@ export {
     createGroup,
     getUserCreatedGroupes,
     deleteSingleGroup,
-    getAllGroupsUserIn
+    getAllGroupsUserIn,
+    leaveFromGroup
 }
